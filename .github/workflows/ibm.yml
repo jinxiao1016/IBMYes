@@ -1,6 +1,4 @@
 name: IBM Cloud Auto Restart
-
-
 on:
   push:
     branches: [ master ]
@@ -8,7 +6,6 @@ on:
     branches: [ master ]
   schedule:
     - cron: ' 0 0 *'
-
 jobs:
   ibm-cloud-restart:
     runs-on: ubuntu-latest
@@ -41,5 +38,4 @@ jobs:
         IBM_APP_NAME: ${{ secrets.IBM_APP_NAME }}
       run: |
         ./IBM_Cloud_CLI/ibmcloud cf restart "$IBM_APP_NAME"
-        
-
+      
